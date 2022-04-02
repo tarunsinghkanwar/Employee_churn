@@ -28,7 +28,7 @@ def index_page():
 
 
 
-@app.route('/training', methods=['POST'])
+@app.route('/training', methods=['GET','POST'])
 @cross_origin()
 def training_route_client():
     """
@@ -56,7 +56,7 @@ def training_route_client():
     except Exception as e:
         return Response("Error Occurred! %s" % e)
 
-@app.route('/batchprediction', methods=['POST'])
+@app.route('/batchprediction', methods=['GET','POST'])
 @cross_origin()
 def batch_prediction_route_client():
     """
@@ -86,7 +86,7 @@ def batch_prediction_route_client():
         return Response("Error Occurred! %s" % e)
 
 
-@app.route('/prediction', methods=['POST'])
+@app.route('/prediction', methods=['GET','POST'])
 @cross_origin()
 def single_prediction_route_client():
     """
